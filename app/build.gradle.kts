@@ -1,16 +1,14 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    kotlin("kapt")
-    id("com.google.dagger.hilt.android")
 }
 
 android {
-    namespace = "com.jve386.pokedexapp"
+    namespace = "com.jve386.pokedexapp_pokeapi"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.jve386.pokedexapp"
+        applicationId = "com.jve386.pokedexapp_pokeapi"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -38,21 +36,8 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    kapt {
-        correctErrorTypes = true
-        useBuildCache = true // Optional: enable build cache for kapt
-        javacOptions {
-            // Specify the Java version here
-            option("target", "1.8")
-        }
-    }
-    hilt {
-        enableAggregatingTask = true
-        enableTransformForLocalTests = true
-    }
     buildFeatures {
         compose = true
-        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -74,8 +59,6 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -83,25 +66,4 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-
-
-    // Fragment
-    implementation ("androidx.fragment:fragment-ktx:1.6.2")
-    // Activity
-    implementation ("androidx.activity:activity-ktx:1.8.2")
-    // ViewModel
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
-    // LiveData
-    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
-    // Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
-    //Corrutinas
-    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
-    // Dagger Hilt
-    implementation("com.google.dagger:hilt-android:2.46.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.46.1")
-    //Glide
-    implementation("com.github.bumptech.glide:glide:4.12.0")
-
 }

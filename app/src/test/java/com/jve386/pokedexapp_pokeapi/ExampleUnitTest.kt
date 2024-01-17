@@ -1,4 +1,4 @@
-package com.jve386.pokedexapp
+package com.jve386.pokedexapp_pokeapi
 
 import org.junit.Test
 
