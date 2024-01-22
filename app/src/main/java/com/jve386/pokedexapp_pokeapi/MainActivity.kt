@@ -17,6 +17,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
+import com.jve386.pokedexapp_pokeapi.pokemonlist.PokemonListScreen
 import com.jve386.pokedexapp_pokeapi.ui.theme.PokedexAppPokeApi
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
                     navController = navController, startDestination = "pokemon_list_screen"
                 ) {
                     composable("pokemon_list_screen") {
-
+                        PokemonListScreen(navController = navController)
                     }
                     composable(
                         "pokemon_detail_screen/{dominantColor}/{pokemonName}",
