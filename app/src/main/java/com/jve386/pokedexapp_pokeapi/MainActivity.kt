@@ -15,8 +15,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.navArgument
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
 import com.jve386.pokedexapp_pokeapi.pokemonlist.PokemonListScreen
 import com.jve386.pokedexapp_pokeapi.ui.theme.PokedexAppPokeApi
 import dagger.hilt.android.AndroidEntryPoint
