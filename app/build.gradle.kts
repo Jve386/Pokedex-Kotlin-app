@@ -114,8 +114,9 @@ dependencies {
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0-alpha03")
 
     // Coil
-    implementation ("io.coil-kt:coil:1.1.1")
+    implementation ("io.coil-kt:coil:2.2.0")
     implementation ("com.google.accompanist:accompanist-coil:0.7.0")
+    implementation("io.coil-kt:coil-compose:2.2.2")
 
     implementation("androidx.palette:palette:1.0.0")
 }

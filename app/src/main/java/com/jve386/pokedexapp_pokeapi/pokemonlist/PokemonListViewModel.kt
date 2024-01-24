@@ -7,11 +7,13 @@ import android.graphics.drawable.Drawable
 import android.nfc.tech.MifareUltralight.PAGE_SIZE
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.text.capitalize
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.palette.graphics.Palette
 import com.jve386.pokedexapp_pokeapi.data.models.PokedexListEntry
 import com.jve386.pokedexapp_pokeapi.repository.PokemonRepository
+import com.jve386.pokedexapp_pokeapi.util.Constants
 import com.jve386.pokedexapp_pokeapi.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -46,11 +48,10 @@ class PokemonListViewModel @Inject constructor(
                         } else {
                             entry.url.takeLastWhile { it.isDigit() }
                         }
-                        val url =
-                            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${number}.png"
+                        val spriteUrl = "${Constants.BASE_POKEMON_SPRITE_URL}${number}.png"
                         PokedexListEntry(
                             entry.name.replaceFirstChar(Char::uppercaseChar),
-                            url,
+                            spriteUrl,
                             number.toInt()
                         )
                     }

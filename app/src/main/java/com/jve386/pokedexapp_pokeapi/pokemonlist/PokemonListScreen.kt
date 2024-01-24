@@ -40,6 +40,7 @@ import com.google.accompanist.coil.CoilImage
 import com.jve386.pokedexapp_pokeapi.R
 import com.jve386.pokedexapp_pokeapi.data.models.PokedexListEntry
 import com.jve386.pokedexapp_pokeapi.ui.theme.RobotoCondensed
+import kotlinx.coroutines.launch
 
 
 @Composable
