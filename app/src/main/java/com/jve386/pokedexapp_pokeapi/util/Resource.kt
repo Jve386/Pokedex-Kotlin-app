@@ -26,9 +26,5 @@ sealed interface Resource<T> {
     data class Error<T>(override val message: String, override val data: T? = null) : Resource<T> {
         override val status = ResourceStatus.ERROR
     }
-
-    data class Loading<T>(override val data: T? = null) : Resource<T> {
-        override val status = ResourceStatus.LOADING
-        override val message: String? = null
-    }
+    
 }
